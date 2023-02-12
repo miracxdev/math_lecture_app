@@ -23,7 +23,6 @@ class _Screen2State extends State<Screen2> {
             itemCount: 16,
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: ,
                 child: ListTile(
                   title: Text(screen2controller.titles[index]),
                 ),
