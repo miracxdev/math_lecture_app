@@ -12,20 +12,32 @@ class _Screen1State extends State<Screen1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Matematik Uygulaması")),
+      backgroundColor: Color(0xffDDDDDD),
       body: Stack(
         children: [
-          Column(
-            children: [
-              ListTile(
-                title: Text("Matematik"),
-                onTap: () => Navigator.push(
+          Center(
+            child: Column(
+              children: [
+                Image.asset(
+                  "assets/images/math.png",
+                  height: 200,
+                  width: 200,
+                )
+              ],
+            ),
+          ),
+          Center(child: Text("asdf")),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(300, 700, 10, 30),
+            child: FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => Screen2(),
-                    )),
-              )
-            ],
+                    ));
+              },
+            ),
           )
         ],
       ),
