@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:matematik_konu_anlatim/screens/screen2/view/screen2.dart';
+import 'package:matematik_konu_anlatim/screens/kimya/view/kimya_view.dart';
+import 'package:matematik_konu_anlatim/screens/matematik/view/screen2.dart';
 
 class Screen1 extends StatefulWidget {
   const Screen1({super.key});
@@ -45,25 +46,55 @@ class _Screen1State extends State<Screen1> {
             ),
           ),
           Center(
-              child: Padding(
-            padding: const EdgeInsets.only(top: 100),
             child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: SizedBox(
+              padding: const EdgeInsets.only(top: 100),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: SizedBox(
+                  child: ListTile(
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    tileColor: const Color(0xff14C38E),
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Screen2(),
+                          ),
+                          (route) => false);
+                    },
+                    title: const Text(
+                      "Matematik",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Raleway",
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 425),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
                 child: ListTile(
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
-                  tileColor: const Color(0xff14C38E),
+                  tileColor: const Color(0xffBE6DB7),
                   onTap: () {
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Screen2(),
+                          builder: (context) => const KimyaView(),
                         ),
                         (route) => false);
                   },
                   title: const Text(
-                    "Matematik",
+                    "Kimya",
                     style: TextStyle(
                         color: Colors.white,
                         fontFamily: "Raleway",
@@ -73,7 +104,7 @@ class _Screen1State extends State<Screen1> {
                 ),
               ),
             ),
-          ))
+          ),
         ],
       ),
     );
